@@ -4,6 +4,13 @@ class P2P_Side_Post extends P2P_Side {
 
 	protected $item_type = 'P2P_Item_Post';
 
+	/**
+	 * Query variables for post queries
+	 *
+	 * @var array
+	 */
+	protected $query_vars;
+
 	function __construct( $query_vars ) {
 		$this->query_vars = $query_vars;
 	}
@@ -154,5 +161,4 @@ class P2P_Side_Post extends P2P_Side {
 		return in_array( $post_type, $this->query_vars['post_type'] );
 	}
 }
-
 
