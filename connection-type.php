@@ -1,5 +1,6 @@
 <?php
 
+#[AllowDynamicProperties]
 class P2P_Connection_Type {
 
 	public $side;
@@ -9,6 +10,62 @@ class P2P_Connection_Type {
 	public $labels;
 
 	protected $title;
+
+	/**
+	 * Connection fields configuration
+	 *
+	 * @var array
+	 */
+	public $fields;
+
+	/**
+	 * Connection type name
+	 *
+	 * @var string
+	 */
+	public $name;
+
+	/**
+	 * Connection data
+	 *
+	 * @var array
+	 */
+	public $data;
+
+	/**
+	 * Whether duplicate connections are allowed
+	 *
+	 * @var bool
+	 */
+	public $duplicate_connections;
+
+	/**
+	 * Whether self-connections are allowed
+	 *
+	 * @var bool
+	 */
+	public $self_connections;
+
+	/**
+	 * Whether connections are sortable
+	 *
+	 * @var bool|string
+	 */
+	public $sortable;
+
+	/**
+	 * Whether the connection type is reciprocal
+	 *
+	 * @var bool
+	 */
+	public $reciprocal;
+
+	/**
+	 * Direction strategy object
+	 *
+	 * @var object
+	 */
+	public $strategy;
 
 	public function __construct( $args, $sides ) {
 		$this->side = $sides;
@@ -439,4 +496,3 @@ class P2P_Connection_Type {
 		return $label;
 	}
 }
-

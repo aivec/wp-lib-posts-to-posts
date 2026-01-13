@@ -1,6 +1,10 @@
 <?php
 
+#[AllowDynamicProperties]
 class P2P_Autoload {
+
+	protected string $prefix;
+	protected string $basedir;
 
 	protected function __construct( $prefix, $basedir ) {
 		$this->prefix = $prefix;
@@ -38,4 +42,3 @@ P2P_Autoload::register( 'P2P_', dirname( __FILE__ ) );
 
 require_once dirname( __FILE__ ) . '/util.php';
 require_once dirname( __FILE__ ) . '/api.php';
-
